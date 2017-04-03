@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleCalc/main.swift"
-            timestampString = "512935508.630006"
+            timestampString = "512946971.755384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37">
+            startingLineNumber = "68"
+            endingLineNumber = "68">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
