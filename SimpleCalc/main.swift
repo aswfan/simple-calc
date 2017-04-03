@@ -45,11 +45,17 @@ func mod(a: Int, b: Int) -> (Bool, Int) {
 }
 
 print("this is an simple calculator")
-print("[Usage]: if you want to compute '15 + 27', you can do as following:")
+print("[Usage 1] basic operation:")
 print("15")
 print("+")
 print("27")
 print("then the result 42 will be returned")
+print("[Usage 2] multi-operand operation:")
+print("15")
+print("14")
+print("27")
+print("count")
+print("then the result 3 will be returned")
 
 while true{
     print("Enter an expression separated by returns:")
@@ -58,35 +64,45 @@ while true{
     var args = [String]()
     var result = 0
     var bool = true
+    var mulOperand = ["count", "avg", "fact"]
+    var basicOperand = ["+", "-", "*", "/", "%"]
     
     //read the inputs
-    while let val = readLine(strippingNewline: true) {
-        args.append(val.trim())
-        if val == "count" || val == "avg" || val == "fact"{
+    while var val = readLine(strippingNewline: true) {
+        val = val.trim()
+        args.append(val)
+        if mulOperand.contains(val) {
             break
-        }else if val == "+" || val == "-" || val == "*" || val == "/" || val == "%" {
+        }else if basicOperand.contains(val) {
             args.append(readLine(strippingNewline: true)!.trim())
+            break
+        }else if Int(val) == nil {
             break
         }
     }
     
     var count = args.count
+    let val = args[count-1]
     
-    if args[count-1] == "count" {
+    if val == "count" {
         result = count
-    }else if args[count-1] == "avg" {
+    }else if val == "avg" {
         for i in 0..<count-1 {
             result += Int(args[i])!
         }
         result /= count - 1
-    }else if args[count-1] == "fact" {
+    }else if val == "fact" {
         if count != 2 {
             print("Illegal input: factorial can only accept one number!")
+            continue
         }
         result = 1
-        for i in 1..<count-1 {
+        for i in 1...Int(args[0])! {
             result *= i
         }
+    }else if Int(val) == nil {
+        print("Illegal Input: invalid input which is neither number nor legal operand")
+        continue
     }else if count == 3 {
         //basic calc
         if args[1] == "-" {
@@ -97,12 +113,12 @@ while true{
             result = mul(a: Int(args[0])!, b: Int(args[2])!).1
         }else if args[1] == "/" {
             (bool, result) = div(a: Int(args[0])!, b: Int(args[2])!)
-            if bool {
+            if !bool {
                 continue
             }
         }else if args[1] == "%" {
             (bool, result) = mod(a: Int(args[0])!, b: Int(args[2])!)
-            if bool {
+            if !bool {
                 continue
             }
         }else{
