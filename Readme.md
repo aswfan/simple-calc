@@ -37,17 +37,17 @@ Result: -12
 
 - Add a few new (multi-operand) operations in
 
-    - "count": count the number of input
+  - "count": count the number of input
 ```
 10 4 25 17 5 count => 5
 ```
-    - "avg": average all the inputs
+  - "avg": average all the inputs
 ```
 2 4 6 8 10 avg => 6
 ```
 any of these two can take any number of inputs
 
-    - "fact": calculate factorial
+  - "fact": calculate factorial
 
 __fact can only accept one number__
 ```
