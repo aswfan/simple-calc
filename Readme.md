@@ -45,9 +45,9 @@ Result: -12
   
 `2 4 6 8 10 avg => 6`
 
-3. any of these two can take any number of inputs
+any of these two can take any number of inputs
 
-"fact": calculate factorial
+3. "fact": calculate factorial
 
 __fact can only accept one number__
 
