@@ -1,6 +1,6 @@
-## This is the 1st assignment for INFO 449: Mobile Development: IOS
+## This is the 1st assignment for INFO 449: Mobile Development: IOS (Spring, 2017)
 
-Date: Spring, 2017
+Date: Apr. 4, 2017
 
 Project Name: SimpleCalc
 
